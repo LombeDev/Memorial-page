@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>In Loving Memory</h1>
+        <p>Remembering a dear one...</p>
+    </header>
+    <div class="container">
+        <h2>About</h2>
+        <p>Share a few words about the person you are honoring.</p>
+        <h2>Photos</h2>
+        <div id="photos">
+            <!-- You can add images here -->
+        </div>
+        <h2>Memories</h2>
+        <textarea id="memories" rows="5" cols="40" placeholder="Share your memories..."></textarea>
+        <button onclick="addMemory()">Add Memory</button>
+        <ul id="memoryList">
+            <!-- Memories will be added here using JavaScript -->
+        </ul>
+    </div>
+    <script>
+        function addMemory() {
+            var memoryText = document.getElementById("memories").value;
+            if (memoryText !== "") {
+                var memoryList = document.getElementById("memoryList");
+                var listItem = document.createElement("li");
+                listItem.innerText = memoryText;
+                memoryList.appendChild(listItem);
+                document.getElementById("memories").value = "";
+            }
+        }
+    </script>
+</body>
+</html>
